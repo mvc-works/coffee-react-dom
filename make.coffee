@@ -68,10 +68,11 @@ target.patch = ->
 target.rsync = ->
   mission.rsync
     file: './'
-    dest: 'tiye:~/repo/blog/'
+    dest: 'tiye:~/repo/coffee-react-dom/'
     options:
       exclude: [
         'node_modules/'
+        'bower_components/'
         'coffee'
         'README.md'
         'js'
