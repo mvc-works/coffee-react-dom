@@ -15,6 +15,7 @@ npm i --save-dev coffee-react-dom # browserify
 dom = require 'coffee-react-dom'
 
 Comment = React.createClass
+  displayName: 'Comment'
   render: ->
     props = @props
     dom -> @div class: 'comment',
@@ -22,6 +23,7 @@ Comment = React.createClass
       props.children
 
 CommentList = React.createClass
+  displayName: 'CommentList'
   render: ->
     commentNodes = @props.data.map (comment) ->
       Comment author: comment.author,
@@ -30,6 +32,7 @@ CommentList = React.createClass
       commentNodes
 
 ComponentForm = React.createClass
+  displayName: 'ComponentForm'
   render: ->
     dom -> @div class: 'comment-form',
       'this is a comment form'
@@ -41,6 +44,7 @@ data = [
 ]
 
 CommentBox = React.createClass
+  displayName: 'CommentBox'
   render: ->
     props = @props
     dom -> @div class: 'comment-box',
