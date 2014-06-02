@@ -6,11 +6,9 @@ CoffeeScript for React, instead of JSX.
 
 ### Usage
 
-```
+```bash
 # with Browserify
 npm i --save-dev coffee-react-dom
-# or plain JavaScript, path is `js/dom.js`
-bower i coffee-react-dom --save coffee-react-dom
 ```
 ```coffee
 dom = require 'coffee-react-dom'
@@ -25,6 +23,12 @@ Comment = React.createClass
     dom -> @div class: 'comment',
       @h2 class: 'comment-author', props.author
       props.children
+```
+
+Or you may choose `window.dom` function to use:
+```bash
+# or plain JavaScript, path is `lib/dom.js`
+bower i --save coffee-react-dom
 ```
 
 ### Notice
@@ -43,11 +47,10 @@ Merely calling `React.DOM.div` with `@div`, read `dom.coffee`:
 ```coffee
 scope = {}
 
-module.exports = (generator) ->
-  generator.call scope
-
-module.exports._init = (proto) ->
-  bind proto
+module.exports = (template) ->
+  template.call scope
+module.exports._init = (ReactDOM) ->
+  bind ReactDOM
 
 bind = (DOM) ->
   for tag, func of DOM
@@ -107,6 +110,10 @@ React.renderComponent (CommentBox data: data),
 ```
 
 ### Changelog
+
+* `0.0.4`
+
+  * add Bower package
 
 * `0.0.3`
 
