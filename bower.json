@@ -13,12 +13,12 @@
     "tests",
     "node_modules",
     "build",
-    "./cirru",
-    "./coffee",
-    "./css",
-    "./js/main.js",
-    "./index.html",
-    "./make.coffee"
+    "cirru",
+    "coffee",
+    "css",
+    "js/main.js",
+    "index.html",
+    "make.coffee"
   ],
   "dependencies": {
     "react": "*"
