@@ -1,27 +1,30 @@
 
 dom = require './dom'
 
+# need this unless `window.React.DOM` exists
+# dom._init React.DOM
+
 Comment = React.createClass
   displayName: 'Comment'
   render: ->
     props = @props
-    dom -> @div class: 'comment',
-      @h2 class: 'comment-author', props.author
+    dom -> @div className: 'comment',
+      @h2 className: 'comment-author', props.author
       props.children
 
 CommentList = React.createClass
   displayName: 'CommentList'
   render: ->
-    commentNodes = @props.data.map (comment) ->
-      Comment author: comment.author,
+    commentNodes = @props.data.map (comment, index) ->
+      Comment author: comment.author, key: index,
         comment.text
-    dom -> @div class: 'comment-list',
+    dom -> @div className: 'comment-list',
       commentNodes
 
 ComponentForm = React.createClass
   displayName: 'ComponentForm'
   render: ->
-    dom -> @div class: 'comment-form',
+    dom -> @div className: 'comment-form',
       'this is a comment form'
 
 data = [
@@ -34,10 +37,10 @@ CommentBox = React.createClass
   displayName: 'CommentBox'
   render: ->
     props = @props
-    dom -> @div class: 'comment-box',
-      @h1 @, 'comments'
+    dom -> @div className: 'comment-box',
+      @h1 {}, 'comments'
       CommentList data: props.data
-      ComponentForm @
+      ComponentForm {}
 
 React.renderComponent (CommentBox data: data),
   document.querySelector('#app')
