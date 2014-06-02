@@ -1,11 +1,15 @@
 
 scope = {}
 
-module.exports = (generator) ->
-  generator.call scope
+if module?.exports?
+  module.exports = (template) ->
+    template.call scope
+  module.exports._init = (ReactDOM) ->
+    bind ReactDOM
 
-module.exports._init = (proto) ->
-  bind proto
+else
+  window.dom = (template) ->
+    template.call scope
 
 bind = (DOM) ->
   for tag, func of DOM

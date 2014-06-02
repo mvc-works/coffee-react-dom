@@ -7,7 +7,10 @@ CoffeeScript for React, instead of JSX.
 ### Usage
 
 ```
+# with Browserify
 npm i --save-dev coffee-react-dom
+# or plain JavaScript, path is `js/dom.js`
+bower i coffee-react-dom --save coffee-react-dom
 ```
 ```coffee
 dom = require 'coffee-react-dom'
@@ -33,7 +36,7 @@ Comment = React.createClass
 
 This is CommonJS module, just fork it for other needs.
 
-### Implemenation
+### Implementaion
 
 Merely calling `React.DOM.div` with `@div`, read `dom.coffee`:
 

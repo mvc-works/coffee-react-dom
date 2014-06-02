@@ -1,6 +1,6 @@
 {
   "name": "coffee-react-dom",
-  "version": "0.0.0",
+  "version": "0.0.4",
   "authors": [
     "jiyinyiyong <jiyinyiyong@gmail.com>"
   ],
@@ -10,9 +10,25 @@
     "node_modules",
     "bower_components",
     "test",
-    "tests"
+    "tests",
+    "node_modules",
+    "build",
+    "./cirru",
+    "./coffee",
+    "./css",
+    "./js/main.js",
+    "./index.html",
+    "./make.coffee"
   ],
   "dependencies": {
-    "react": "~0.10.0"
-  }
+    "react": "*"
+  },
+  "homepage": "https://github.com/jiyinyiyong/coffee-react-dom",
+  "description": "CoffeeScript for React, instead of JSX.",
+  "main": "js/dom.js",
+  "keywords": [
+    "react",
+    "coffee",
+    "dom"
+  ]
 }
