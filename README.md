@@ -4,6 +4,27 @@ Coffee React DOM
 
 CoffeeScript for React, instead of JSX.
 
+### Some thoughts
+
+Before looking into this module, there's another solution.
+That is, running `$ = React.DOM` and use `$.div` to create elements.
+In such way you are away from the problem caused by rewriting `@`.
+Here's a demo:
+
+```coffee
+$ = React.DOM
+
+Comment = React.createClass
+  displayName: 'Comment'
+  render: ->
+    $.div class: 'comment',
+      $.h2 class: 'comment-author', @props.author
+      @props.children
+```
+Considering this, I think it would be better if I deprecate this package.
+
+However, if you want it look better like `@div`, then read docs below.
+
 ### Usage
 
 ```bash
